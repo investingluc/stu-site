@@ -136,6 +136,9 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .ck.on .bx svg{opacity:1;transform:none}
 .w-foot{display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--g3)}
 .w-foot b{color:var(--o2);font-weight:600}
+.widget.fade #mini .cd,.widget.fade #mini .ts,.widget.fade #mini .zn,.widget.fade .w-px.t,.widget.fade .w-ll.t{opacity:0!important;transition:opacity .6s ease!important;transition-delay:0s!important}
+.widget.fade .ck,.widget.fade .ck .bx,.widget.fade .ck .bx svg{transition-duration:.6s!important;transition-delay:0s!important}
+.widget.reset #mini *,.widget.reset .w-px,.widget.reset .w-ll,.widget.reset .ck,.widget.reset .ck *{transition:none!important}
 .widget.done #mini .cd,.widget.done #mini .ts,.widget.done #mini .zn,.widget.done .w-px.t,.widget.done .w-ll.t,.widget.done .ck,.widget.done .ck .bx,.widget.done .ck .bx svg{transition:none!important}
 .float{animation:float 7s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -422,7 +425,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     <div>
       <span class="pill rv"><span class="pl-full">Swing Trading University · Education, Not Alerts</span><span class="pl-short">Swing Trading University</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
       <h1 class="grad rv d1">Everything You Need to Become a <span class="hl">Profitable Swing Trader</span>.</h1>
-      <p class="lead rv d2">The exact process to find, size and hold swing trades, so you can stop guessing and <b>start thinking for yourself.</b></p>
+      <p class="lead rv d2">The unique process built to find, size and hold swing trades, so you can <b>start aggressively compounding.</b></p>
       <div class="hero-cta rv d3">
         <a class="btn btn-w" href="https://whop.com/checkout/plan_5iViZi5NDtxZ5" target="_top">Join Swing Trading University <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
         <a class="btn btn-o" href="#inside"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>See What's Inside</a>
@@ -784,26 +787,40 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
       mini.appendChild(g);
     });
   }
-  function tpFinal(){
-    if(!W)return; tpTimers.forEach(clearTimeout); tpStarted=true;
-    W.classList.add('done','go','brk','tsd'); W.querySelectorAll('.ck').forEach(function(c){c.classList.add('on')});
+  // looping animation: draw -> hold -> fade -> restart; only while on screen and tab visible
+  var CKS=W?W.querySelectorAll('.ck'):[], HOLD=2500, FADE=600, GAP=350;
+  var tpRunning=false, tpFrozen=false, tpShown=false, tpVisible=false;
+  function later(fn,ms){ tpTimers.push(setTimeout(fn,ms)); }
+  function clearT(){ tpTimers.forEach(clearTimeout); tpTimers=[]; }
+  function tpReset(){
+    W.classList.add('reset'); W.classList.remove('go','brk','tsd','fade','done');
+    CKS.forEach(function(c){c.classList.remove('on')});
+    void W.offsetWidth; W.classList.remove('reset'); tpShown=false;
   }
-  function tpPlay(){
-    if(!W||tpStarted)return; tpStarted=true;
-    if(reduce||window.__forceReveal){ tpFinal(); return; }
-    W.classList.add('go');
-    var tBrk=BO*STEP+450, tEnd=(C.length-1)*STEP+500;
-    tpTimers.push(setTimeout(function(){W.classList.add('brk')},tBrk));
-    tpTimers.push(setTimeout(function(){W.classList.add('tsd')},tEnd));
-    W.querySelectorAll('.ck').forEach(function(c,i){ tpTimers.push(setTimeout(function(){c.classList.add('on')},tBrk+350+i*380)); });
+  function tpCycle(){ clearT(); tpReset(); later(tpPlayOnce,GAP); }
+  function tpPlayOnce(){
+    tpShown=true; W.classList.add('go');
+    var tBrk=BO*STEP+450, tEnd=(C.length-1)*STEP+500, tCk=tBrk+350, tDone=Math.max(tEnd+500,tCk+(CKS.length-1)*380+400);
+    later(function(){W.classList.add('brk')},tBrk);
+    later(function(){W.classList.add('tsd')},tEnd);
+    CKS.forEach(function(c,i){ later(function(){c.classList.add('on')},tCk+i*380); });
+    later(tpFade,tDone+HOLD);
+  }
+  function tpFade(){ W.classList.add('fade'); CKS.forEach(function(c){c.classList.remove('on')}); later(tpCycle,FADE+30); }
+  function tpStart(){ if(tpFrozen||tpRunning)return; tpRunning=true; if(tpShown){ clearT(); tpFade(); } else tpCycle(); }
+  function tpStop(){ tpRunning=false; clearT(); }
+  function tpCheck(){ if(tpVisible && !document.hidden) tpStart(); else tpStop(); }
+  function tpFinal(){
+    if(!W)return; tpFrozen=true; tpStop();
+    W.classList.remove('fade','reset'); W.classList.add('done','go','brk','tsd'); CKS.forEach(function(c){c.classList.add('on')});
   }
   if(mini){
     drawTP();
     var rz; window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(drawTP,120)});
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(drawTP);
-    if('IntersectionObserver' in window && !reduce){
-      var tio=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){ setTimeout(tpPlay,500); tio.disconnect(); } })},{threshold:.35});
-      tio.observe(W);
+    if('IntersectionObserver' in window && !reduce && !window.__forceReveal){
+      new IntersectionObserver(function(es){ es.forEach(function(en){ tpVisible=en.isIntersecting; }); tpCheck(); },{threshold:.25}).observe(W);
+      document.addEventListener('visibilitychange',tpCheck);
     } else tpFinal();
   }
   window.tradePlanFinal=tpFinal;
