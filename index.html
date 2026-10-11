@@ -126,7 +126,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 
 /* stats */
 .stats{padding:20px 0 40px}
-.stats-row{display:grid;grid-template-columns:repeat(5,1fr)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{text-align:center;padding:10px 12px;position:relative}
 .stat+.stat:before{content:"";position:absolute;left:0;top:12%;height:76%;width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.18),transparent)}
 .stat b{display:block;font-size:clamp(36px,4vw,50px);font-weight:500;letter-spacing:-.04em;line-height:1.1;background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -336,8 +336,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .hero-cta .btn{flex:1 1 100%}
   .stats-row{grid-template-columns:repeat(2,1fr);row-gap:22px}
   .stat:nth-child(odd):before{display:none}
-  .stat:last-child{grid-column:span 2}
-  .stat:last-child:before{display:none}
   .stat span{font-size:14.5px}
   .shead{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:40px}
   .shead p{text-align:left}
@@ -449,8 +447,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     <div class="stat rv"><b data-count="12">0</b><span>Course Modules</span></div>
     <div class="stat rv d1"><b data-count="50" data-suffix="+">0</b><span>Lessons</span></div>
     <div class="stat rv d2"><b data-count="9">0</b><span>Member Spaces</span></div>
-    <div class="stat rv d3"><b data-count="6">0</b><span>Years To Profitability</span></div>
-    <div class="stat rv d4"><b data-count="39" data-suffix="K+">0</b><span>Followers On X</span></div>
+    <div class="stat rv d3"><b data-count="39" data-suffix="K+">0</b><span>Followers On X</span></div>
   </div>
 </section>
 
