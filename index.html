@@ -83,6 +83,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .mnav{display:none}
 .nav .login{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:9px;font-size:14px;font-weight:500;color:#d6d6d6;white-space:nowrap;transition:color .2s,background .2s}
 .nav .login:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav .login .lg-short{display:none}
 
 /* hero */
 .hero{position:relative;min-height:860px;padding:190px 0 120px;overflow:hidden;isolation:isolate}
@@ -377,7 +378,9 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .f-top{grid-template-columns:1fr 1fr}
   .f-top>div:first-child{grid-column:span 2}
   .brand span.full{display:none}
-  .nav .login{display:none}
+  .nav .login{height:38px;padding:0 13px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font-weight:600}
+  .nav .login .lg-full{display:none}
+  .nav .login .lg-short{display:inline}
   .widget{padding:16px}
   .w-chart{height:190px}
   .ck small{white-space:normal}
@@ -403,7 +406,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div style="display:flex;gap:8px;align-items:center">
-    <a class="login" href="https://member.swingtradinguniversity.com" target="_top">Member Login</a>
+    <a class="login" href="https://member.swingtradinguniversity.com" target="_top"><span class="lg-full">Member Login</span><span class="lg-short">Log In</span></a>
     <a class="btn btn-w" href="https://whop.com/checkout/plan_5iViZi5NDtxZ5" target="_top">Join Now</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
