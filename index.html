@@ -285,6 +285,23 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .incl li svg{width:19px;height:19px;color:var(--o);flex:none;margin-top:2px}
 .incl li small{display:block;color:var(--g2);font-size:13.5px}
 
+.wacc{border-top:1px solid var(--line)}
+.wr{border-bottom:1px solid var(--line);transition:background .3s}
+.wr:hover,.wr.open{background:linear-gradient(90deg,transparent,rgba(255,99,10,.04),transparent)}
+.wr button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:56px 42px 1fr 26px;align-items:center;gap:20px;padding:26px 0;cursor:pointer}
+.wr button:focus-visible{outline:2px solid var(--o);outline-offset:2px;border-radius:12px}
+.wr .n{color:var(--g2);font-size:15px;font-variant-numeric:tabular-nums}
+.wr .ic{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,var(--o2),var(--o));display:grid;place-items:center;box-shadow:0 0 0 6px rgba(255,99,10,.1),0 8px 24px -6px rgba(255,99,10,.7)}
+.wr .ic svg{width:20px;height:20px;color:#fff}
+.wr h3{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.03em;color:#fff}
+.wr .tg{width:26px;height:26px;border-radius:7px;border:1px solid var(--line2);display:grid;place-items:center;transition:transform .35s ease,background .3s,border-color .3s;color:#e9e9e9}
+.wr .tg svg{width:14px;height:14px}
+.wr.open .tg{transform:rotate(180deg);background:var(--o);border-color:var(--o)}
+.wr .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.wr.open .ans{grid-template-rows:1fr}
+.wr .ans>div{overflow:hidden}
+.wr .ans p{color:var(--g1);font-size:16.5px;max-width:620px;padding:0 0 28px 138px}
+@media (max-width:760px){.wr button{grid-template-columns:28px 36px 1fr 26px;gap:12px;padding:22px 0}.wr .ic{width:36px;height:36px}.wr .ic svg{width:17px;height:17px}.wr h3{font-size:20px}.wr .ans p{padding:0 0 24px 0;font-size:16px}}
 /* faq */
 .faq{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
 .faq-l p{color:var(--g1);margin-top:22px;font-size:16px;max-width:360px}
@@ -480,25 +497,10 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
       <div><span class="pill rv">Why STU <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span><h2 class="grad rv d1">Why Most Traders Lose<br>(And What Fixes It)</h2></div>
       <p class="rv d2">It's not because they're dumb. The game is rigged toward activity. You don't need more picks. You need a process.</p>
     </div>
-    <div class="rows">
-      <div class="row rv">
-        <span class="n">01</span>
-        <h3>A Process, Not Picks</h3>
-        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5"/></svg></div>
-        <p>Most people buy calls off a stranger's tweet, then panic on the first red day. Picks make you dependent. A process makes you dangerous. I'm teaching you how to fish.</p></div>
-      </div>
-      <div class="row rv">
-        <span class="n">02</span>
-        <h3>Survival First</h3>
-        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <p>Retail traders size too big, trade options before they understand the stock, and get smoked on one bad move. We start with shares, tight risk and small losses, so you're still here when the big trades come.</p></div>
-      </div>
-      <div class="row rv">
-        <span class="n">03</span>
-        <h3>Built for Real Life</h3>
-        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <p>Swing trading fits around a 9-to-5. Most of the work is prep and research you can do on nights and weekends. The edge isn't doing more. It's doing less, with better information.</p></div>
-      </div>
+    <div class="wacc">
+      <div class="wr rv open"><button aria-expanded="true"><span class="n">01</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5"/></svg></span><h3>A Process, Not Picks</h3><span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Most people buy calls off a stranger's tweet, then panic on the first red day. Picks make you dependent. A process makes you dangerous. I'm teaching you how to fish.</p></div></div></div>
+      <div class="wr rv"><button aria-expanded="false"><span class="n">02</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Survival First</h3><span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Retail traders size too big, trade options before they understand the stock, and get smoked on one bad move. We start with shares, tight risk and small losses, so you're still here when the big trades come.</p></div></div></div>
+      <div class="wr rv"><button aria-expanded="false"><span class="n">03</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Built for Real Life</h3><span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Swing trading fits around a 9-to-5. Most of the work is prep and research you can do on nights and weekends. The edge isn't doing more. It's doing less, with better information.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -857,6 +859,15 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     counters.forEach(function(c){co.observe(c)});
   } else { items.forEach(function(i){i.classList.add('in')}); counters.forEach(count); }
   window.revealAll=function(){ window.__forceReveal=true; if(window.tradePlanFinal)window.tradePlanFinal(); items.forEach(function(i){i.classList.add('in')}); counters.forEach(function(c){c.dataset.done='';count(c)}); };
+
+  // Why STU accordion
+  document.querySelectorAll('.wr button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var r=b.parentElement, open=r.classList.contains('open');
+      document.querySelectorAll('.wr.open').forEach(function(o){o.classList.remove('open');o.querySelector('button').setAttribute('aria-expanded','false')});
+      if(!open){r.classList.add('open');b.setAttribute('aria-expanded','true');}
+    });
+  });
 
   // FAQ accordion
   document.querySelectorAll('.qa button').forEach(function(b){
