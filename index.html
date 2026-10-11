@@ -136,8 +136,8 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .ck.on .bx svg{opacity:1;transform:none}
 .w-foot{display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--g3)}
 .w-foot b{color:var(--o2);font-weight:600}
-.widget.fade #mini .cd,.widget.fade #mini .ts,.widget.fade #mini .zn,.widget.fade .w-px.t,.widget.fade .w-ll.t{opacity:0!important;transition:opacity .6s ease!important;transition-delay:0s!important}
-.widget.fade .ck,.widget.fade .ck .bx,.widget.fade .ck .bx svg{transition-duration:.6s!important;transition-delay:0s!important}
+.widget.fade #mini .cd,.widget.fade #mini .ts,.widget.fade #mini .zn,.widget.fade .w-px.t,.widget.fade .w-ll.t{opacity:0!important;transition:opacity .4s ease!important;transition-delay:0s!important}
+.widget.fade .ck,.widget.fade .ck .bx,.widget.fade .ck .bx svg{transition-duration:.4s!important;transition-delay:0s!important}
 .widget.reset #mini *,.widget.reset .w-px,.widget.reset .w-ll,.widget.reset .ck,.widget.reset .ck *{transition:none!important}
 .widget.done #mini .cd,.widget.done #mini .ts,.widget.done #mini .zn,.widget.done .w-px.t,.widget.done .w-ll.t,.widget.done .ck,.widget.done .ck .bx,.widget.done .ck .bx svg{transition:none!important}
 .float{animation:float 7s ease-in-out infinite}
@@ -746,7 +746,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   var W=mini?mini.closest('.widget'):null, tpStarted=false, tpTimers=[];
   var C=[[46.90,47.37,46.69,47.23],[47.23,47.72,47.08,47.59],[47.59,47.72,47.37,47.53],[47.53,47.65,47.43,47.59],[47.59,47.78,46.68,46.85],[46.85,47.06,46.39,46.60],[46.60,47.13,46.52,46.98],[46.98,47.15,46.92,47.02],[47.02,47.54,46.96,47.45],[47.45,47.79,47.26,47.67],[47.67,47.83,47.31,47.45],[47.45,47.57,47.03,47.13],[47.13,47.34,46.86,47.06],[47.06,47.16,46.92,47.01],[47.01,47.22,46.83,47.16],[47.16,47.76,47.04,47.56],[47.56,48.02,47.51,47.90],[47.90,48.02,47.15,47.28],[47.28,47.40,47.22,47.28],[47.28,47.46,46.78,46.87],[46.87,46.98,46.49,46.71],[46.71,47.47,46.61,47.40],[47.40,49.62,47.32,49.38],[49.30,50.01,49.00,49.90],[49.84,50.54,49.62,50.30],[50.24,50.52,49.92,50.05],[50.08,50.93,49.87,50.80],[50.74,51.57,50.40,51.40],[51.46,51.64,50.78,51.10],[51.04,52.10,50.73,51.90],[51.93,52.73,51.58,52.60],[52.54,52.71,52.01,52.30],[52.27,53.37,52.15,53.20],[53.12,54.05,52.96,53.80],[53.82,54.01,53.29,53.50],[53.59,54.52,53.35,54.30],[54.37,54.90,54.23,54.75]];
   C=C.slice(4); // trim lead-in so the base reads clearly
-  var BO=18, STEP=60, LV=[['e',48.20,'Entry','#ffffff'],['s',45.90,'Stop','#FF5A5A']];
+  var BO=18, STEP=40, LV=[['e',48.20,'Entry','#ffffff'],['s',45.90,'Stop','#FF5A5A']];
   // trailing stop: [first candle index, level]; ratchets up below recent lows, never down
   var TS=[[19,48.60],[22,49.60],[25,50.50],[28,51.90]], TSF=TS[TS.length-1][1];
   var PMIN=45.45, PMAX=55.35, PT=10, PB=10;
@@ -788,7 +788,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     });
   }
   // looping animation: draw -> hold -> fade -> restart; only while on screen and tab visible
-  var CKS=W?W.querySelectorAll('.ck'):[], HOLD=2500, FADE=600, GAP=350;
+  var CKS=W?W.querySelectorAll('.ck'):[], HOLD=1200, FADE=400, GAP=250;
   var tpRunning=false, tpFrozen=false, tpShown=false, tpVisible=false;
   function later(fn,ms){ tpTimers.push(setTimeout(fn,ms)); }
   function clearT(){ tpTimers.forEach(clearTimeout); tpTimers=[]; }
@@ -800,10 +800,10 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   function tpCycle(){ clearT(); tpReset(); later(tpPlayOnce,GAP); }
   function tpPlayOnce(){
     tpShown=true; W.classList.add('go');
-    var tBrk=BO*STEP+450, tEnd=(C.length-1)*STEP+500, tCk=tBrk+350, tDone=Math.max(tEnd+500,tCk+(CKS.length-1)*380+400);
+    var tBrk=BO*STEP+450, tEnd=(C.length-1)*STEP+500, tCk=tBrk+350, tDone=Math.max(tEnd+500,tCk+(CKS.length-1)*250+400);
     later(function(){W.classList.add('brk')},tBrk);
     later(function(){W.classList.add('tsd')},tEnd);
-    CKS.forEach(function(c,i){ later(function(){c.classList.add('on')},tCk+i*380); });
+    CKS.forEach(function(c,i){ later(function(){c.classList.add('on')},tCk+i*250); });
     later(tpFade,tDone+HOLD);
   }
   function tpFade(){ W.classList.add('fade'); CKS.forEach(function(c){c.classList.remove('on')}); later(tpCycle,FADE+30); }
