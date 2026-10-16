@@ -123,6 +123,27 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .hero-stats .stat:nth-child(4){grid-column:2 / span 2}
 .hero-stats .stat:nth-child(5){grid-column:4 / span 2}
 .hero-stats .stat:nth-child(1):before,.hero-stats .stat:nth-child(4):before{display:none}
+.hero-right{display:flex;flex-direction:column;gap:22px;align-self:start}
+.hero-right .accolade{margin:0 auto;padding:0 12px}
+.book-card{display:block;position:relative;max-width:440px;width:100%;margin:6px auto 0;border-radius:16px;padding:18px;background:linear-gradient(180deg,rgba(40,18,8,.62),rgba(14,14,14,.9));border:1px solid rgba(255,120,60,.2);box-shadow:0 24px 60px -24px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,180,140,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .5s}
+.book-card:hover{transform:translateY(-3px);border-color:rgba(255,120,60,.45);box-shadow:0 30px 70px -24px rgba(255,99,10,.35)}
+.bc-top{display:flex;align-items:center;gap:12px}
+.bc-top .w-t{flex:1;min-width:0}
+.bc-top .w-t b{display:block;color:#fff;font-weight:500}
+.bc-top .w-t small{color:var(--g2);font-size:12.5px}
+.bc-step{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--o2);border:1px solid rgba(255,120,60,.35);border-radius:999px;padding:4px 9px;white-space:nowrap}
+.bc-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}
+.bc-days span{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);color:#ddd;font-size:15px;font-weight:500}
+.bc-days i{font-style:normal;font-size:11px;color:var(--g2);font-weight:400}
+.bc-days .on,.bc-slots .on{background:rgba(255,99,10,.14);border-color:rgba(255,99,10,.55);color:#fff}
+.bc-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.bc-slots span{text-align:center;padding:8px 0;border-radius:9px;font-size:12.5px;color:#cfcfcf;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);white-space:nowrap}
+.bc-cta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
+.bc-lock{display:inline-flex;align-items:center;gap:7px;color:var(--g2)}
+.bc-lock svg{width:14px;height:14px;color:var(--o2)}
+.bc-cta b{display:inline-flex;align-items:center;gap:6px;color:var(--o2);font-weight:500}
+.bc-cta b svg{width:14px;height:14px}
+@media (max-width:720px){.bc-slots{grid-template-columns:repeat(2,1fr)}.book-card{padding:16px}}
 .hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;font-size:14px;color:var(--g2)}
 .hero-note span{display:inline-flex;align-items:center;gap:7px}
 .hero-note svg{width:15px;height:15px;color:var(--o)}
@@ -352,6 +373,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .hero-lower{grid-template-columns:1fr;gap:40px;margin-top:44px}
   .widget-col{max-width:520px;margin:0 auto;width:100%}
   .hero-stats{max-width:560px;margin:0 auto;width:100%}
+  .hero-right{width:100%}
   .bento{grid-template-columns:1fr 1fr}
   .b-a,.b-f,.b-g{grid-column:span 2}.b-b,.b-c,.b-d,.b-e{grid-column:span 1}
   .coach{grid-template-columns:1fr;gap:40px}
@@ -468,6 +490,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
           <div class="w-foot"><span>Illustrative example, not a trade idea</span><b>Size so one loss can't hurt you</b></div>
         </div>
       </div>
+      <div class="hero-right">
       <div class="hero-stats" aria-label="STU at a glance">
         <div class="stat rv"><b data-count="40" data-suffix="K">0</b><span>Followers On X</span></div>
         <div class="stat rv d1"><b data-count="100" data-suffix="+">0</b><span>Traders Worked With</span></div>
@@ -475,14 +498,21 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
         <div class="stat rv d3"><b>1</b><span>Direct Partnership</span></div>
         <div class="stat rv d4"><b>1:1</b><span>Relationship With Our Team</span></div>
       </div>
+      <p class="accolade rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>Consistently ranked among the top 100 trading voices by Kaiko</p>
+      <a class="book-card rv d3" href="/apply/" target="_top" aria-label="Apply to join STU, then book your call">
+        <div class="bc-top">
+          <div class="w-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
+          <div class="w-t"><b>Book Your Call</b><small>30 Min · Video Call With Our Team</small></div>
+          <span class="bc-step">Step 2</span>
+        </div>
+        <div class="bc-days" aria-hidden="true"><span><i>Mon</i>1</span><span class="on"><i>Tue</i>2</span><span><i>Wed</i>3</span><span><i>Thu</i>4</span><span><i>Fri</i>5</span></div>
+        <div class="bc-slots" aria-hidden="true"><span>9:30 AM</span><span class="on">11:00 AM</span><span>1:30 PM</span><span>4:15 PM</span></div>
+        <div class="bc-cta"><span class="bc-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Application Required First</span><b>Apply to Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></b></div>
+      </a>
+      </div>
     </div>
   </div>
 </header>
-
-<!-- STATS / ACCOLADE -->
-<section class="stats">
-  <p class="accolade rv d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>Consistently ranked among the top 100 trading voices by Kaiko</p>
-</section>
 
 <!-- MARQUEE -->
 <section class="mq-sec" aria-label="Curriculum topics">
