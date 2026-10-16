@@ -54,7 +54,6 @@ section{position:relative}
 .gradx{background:linear-gradient(90deg,#fff 0%,#fff 45%,#8d8d8d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.05}
 h1{font-size:clamp(40px,4.5vw,66px)}
-.hero-grid>:first-child{container-type:inline-size;min-width:0}
 .hero h1{font-size:clamp(46px,7.6vw,80px)}
 h1 .twl{display:block}
 h1 .tws{display:inline-block;white-space:nowrap;text-align:left;vertical-align:top}
@@ -105,20 +104,25 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .nav .login .lg-short{display:none}
 
 /* hero */
-.hero{position:relative;min-height:860px;padding:190px 0 120px;overflow:hidden;isolation:isolate}
+.hero{position:relative;min-height:860px;padding:190px 0 80px;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .hero-bg svg{position:absolute;inset:0;width:100%;height:100%}
 .hero-bg:after{content:"";position:absolute;inset:auto 0 0 0;height:220px;background:linear-gradient(180deg,transparent,#000)}
 .streak{position:absolute;left:-10%;top:58%;width:140%;height:2px;transform:rotate(-24deg);transform-origin:50% 50%;background:linear-gradient(90deg,transparent 0%,rgba(255,140,69,.0) 20%,#ffb37a 55%,#fff3e6 62%,rgba(255,99,10,.6) 72%,transparent 92%);box-shadow:0 0 18px 3px rgba(255,99,10,.55),0 0 80px 14px rgba(255,99,10,.25);opacity:.9}
 .streak.s2{top:12%;left:35%;width:90%;height:1px;opacity:.55}
 .glowblob{position:absolute;border-radius:50%;filter:blur(90px);background:radial-gradient(circle,rgba(255,99,10,.55),rgba(69,25,0,.0) 70%)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:48px;align-items:center}
-@media (min-width:1021px){.hero-grid>:last-child{font-size:.94em}}
-.hero h1{margin:22px 0 22px}
-.hero .lead{max-width:500px}
+.hero-copy{max-width:100%}
+.hero h1{margin:22px 0 22px;max-width:100%}
+.hero .lead{max-width:560px}
 .hero .lead b{color:#fff;font-weight:500}
 .hero-cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-.hero-soft{margin-top:16px;font-size:14.5px;color:var(--g2);max-width:480px;line-height:1.55}
+.hero-soft{margin-top:16px;font-size:14.5px;color:var(--g2);max-width:520px;line-height:1.55}
+.hero-lower{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:36px 48px;align-items:start;margin-top:48px}
+.hero-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px 0;align-self:start;padding-top:28px}
+.hero-stats .stat{grid-column:span 2;padding:8px 8px}
+.hero-stats .stat:nth-child(4){grid-column:2 / span 2}
+.hero-stats .stat:nth-child(5){grid-column:4 / span 2}
+.hero-stats .stat:nth-child(1):before,.hero-stats .stat:nth-child(4):before{display:none}
 .hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;font-size:14px;color:var(--g2)}
 .hero-note span{display:inline-flex;align-items:center;gap:7px}
 .hero-note svg{width:15px;height:15px;color:var(--o)}
@@ -168,23 +172,15 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .widget.done #mini .cd,.widget.done #mini .ts,.widget.done #mini .zn,.widget.done .w-px.t,.widget.done .w-ll.t,.widget.done .ck,.widget.done .ck .bx,.widget.done .ck .bx svg{transition:none!important}
 .float{animation:float 7s ease-in-out infinite;will-change:transform}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media (min-width:1021px){.hero-lower .widget{font-size:.94em}}
 
 /* stats */
-.stats{padding:20px 0 40px}
-.stats-row{display:grid;grid-template-columns:repeat(5,1fr)}
+.stats{padding:8px 0 40px}
 .stat{text-align:center;padding:10px 12px;position:relative}
 .stat+.stat:before{content:"";position:absolute;left:0;top:12%;height:76%;width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.18),transparent)}
-.stat b{display:block;font-size:clamp(36px,4vw,50px);font-weight:500;letter-spacing:-.04em;line-height:1.1;background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat span{color:var(--g1);font-size:16px}
-@media (min-width:1021px){.stat{padding:10px 6px}.stat b{font-size:clamp(34px,3.2vw,46px)}.stat span{font-size:14.5px}}
-@media (max-width:1020px){
-  .stats-row{grid-template-columns:repeat(6,1fr);row-gap:22px}
-  .stat{grid-column:span 2}
-  .stat:nth-child(4){grid-column:2 / span 2}
-  .stat:nth-child(5){grid-column:4 / span 2}
-  .stat:nth-child(1):before,.stat:nth-child(4):before{display:none}
-}
-.accolade{display:block;max-width:560px;margin:26px auto 0;padding:0 24px;text-align:center;font-size:14px;line-height:1.5;letter-spacing:.01em;color:var(--g2);text-wrap:balance}
+.stat b{display:block;font-size:clamp(34px,3.4vw,46px);font-weight:500;letter-spacing:-.04em;line-height:1.1;background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--g1);font-size:14.5px}
+.accolade{display:block;max-width:560px;margin:18px auto 0;padding:0 24px;text-align:center;font-size:14px;line-height:1.5;letter-spacing:.01em;color:var(--g2);text-wrap:balance}
 .accolade svg{display:inline-block;width:16px;height:16px;margin:-3px 8px 0 0;vertical-align:middle;color:var(--o2)}
 
 /* marquee */
@@ -353,8 +349,9 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .mnav.open{display:flex}
   .mnav a{padding:13px 14px;border-radius:9px;color:#ddd;font-size:16px}
   .mnav a:hover{background:rgba(255,255,255,.05)}
-  .hero-grid{grid-template-columns:1fr;gap:56px}
-  .widget-col{max-width:520px}
+  .hero-lower{grid-template-columns:1fr;gap:40px;margin-top:44px}
+  .widget-col{max-width:520px;margin:0 auto;width:100%}
+  .hero-stats{max-width:560px;margin:0 auto;width:100%}
   .bento{grid-template-columns:1fr 1fr}
   .b-a,.b-f,.b-g{grid-column:span 2}.b-b,.b-c,.b-d,.b-e{grid-column:span 1}
   .coach{grid-template-columns:1fr;gap:40px}
@@ -368,14 +365,14 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .hero{padding:140px 0 70px;min-height:0}
   .lead{font-size:16.5px}
   .hero-cta .btn{flex:1 1 100%}
-  .stats-row{grid-template-columns:repeat(2,1fr);row-gap:22px}
-  .stat{grid-column:auto}
-  .stat:nth-child(4),.stat:nth-child(5){grid-column:auto}
-  .stat:nth-child(odd):before{display:none}
-  .stat:nth-child(even):before{display:block}
-  .stat:last-child{grid-column:1 / -1;width:50%;justify-self:center}
-  .stat:last-child:before{display:none}
-  .stat span{font-size:14.5px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);row-gap:18px;gap:18px 0}
+  .hero-stats .stat{grid-column:auto;padding:8px 6px}
+  .hero-stats .stat:nth-child(4),.hero-stats .stat:nth-child(5){grid-column:auto}
+  .hero-stats .stat:nth-child(odd):before{display:none}
+  .hero-stats .stat:nth-child(even):before{display:block}
+  .hero-stats .stat:last-child{grid-column:1 / -1;width:50%;justify-self:center}
+  .hero-stats .stat:last-child:before{display:none}
+  .stat span{font-size:14px}
   .shead{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:40px}
   .shead p{text-align:left}
   .row{grid-template-columns:36px 1fr;padding:32px 0;gap:8px 14px}
@@ -439,8 +436,8 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
     <div class="streak"></div>
     <div class="streak s2"></div>
   </div>
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap">
+    <div class="hero-copy">
       <span class="pill rv hero-pill"><span class="pl-full">Swing Trading University · Education, Not Alerts</span><span class="pl-short">Swing Trading University</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
       <h1 class="grad rv d1"><span class="twl">Becoming <span id="art">a</span> <span class="tws" id="tws"><span class="hl"><span class="tw" id="tw">Profitable</span><span class="caret" aria-hidden="true"></span></span></span></span><span class="twl"><span class="hl">Swing Trader</span> <span class="ow">&amp; Active&nbsp;Investor.</span></span></h1>
       <p class="lead rv d2">The unique process built to find, size and hold swing trades, so you can <b>start aggressively compounding.</b></p>
@@ -450,38 +447,40 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
       </div>
       <p class="hero-soft rv d4">Membership is selective and investment-based. We'll talk through whether STU can support you on the call.</p>
     </div>
-    <div class="widget-col rv d2">
-      <div class="widget float">
-        <div class="w-top">
-          <div class="w-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 4v16M6 8h-2v6h2M12 3v18M12 6h-2v9h2M18 6v14M18 9h-2v5h2"/></svg></div>
-          <div class="w-t"><b>Trade Plan</b><small>Every setup gets mapped before entry</small></div>
+    <div class="hero-lower">
+      <div class="widget-col rv d2">
+        <div class="widget float">
+          <div class="w-top">
+            <div class="w-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 4v16M6 8h-2v6h2M12 3v18M12 6h-2v9h2M18 6v14M18 9h-2v5h2"/></svg></div>
+            <div class="w-t"><b>Trade Plan</b><small>Every setup gets mapped before entry</small></div>
+          </div>
+          <div class="w-chart" role="img" aria-label="Example candlestick chart: a sideways base breaks out through the $48.20 entry and climbs, with a $45.90 initial stop and a trailing stop that ratchets up to $51.90">
+            <div class="w-plot" id="wplot"><svg id="mini" aria-hidden="true"></svg></div>
+            <div class="w-gut" id="wgut" aria-hidden="true"></div>
+          </div>
+          <div class="w-check">
+            <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Market</b><small>Risk&#8209;on environment</small></span></div>
+            <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Story</b><small>Leading theme</small></span></div>
+            <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Chart</b><small>Relative strength</small></span></div>
+            <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Catalyst</b><small>On deck</small></span></div>
+            <div class="ck ck-ts"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b class="ts-t">Proprietary Trailing Stop System</b></span></div>
+          </div>
+          <div class="w-foot"><span>Illustrative example, not a trade idea</span><b>Size so one loss can't hurt you</b></div>
         </div>
-        <div class="w-chart" role="img" aria-label="Example candlestick chart: a sideways base breaks out through the $48.20 entry and climbs, with a $45.90 initial stop and a trailing stop that ratchets up to $51.90">
-          <div class="w-plot" id="wplot"><svg id="mini" aria-hidden="true"></svg></div>
-          <div class="w-gut" id="wgut" aria-hidden="true"></div>
-        </div>
-        <div class="w-check">
-          <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Market</b><small>Risk&#8209;on environment</small></span></div>
-          <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Story</b><small>Leading theme</small></span></div>
-          <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Chart</b><small>Relative strength</small></span></div>
-          <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Catalyst</b><small>On deck</small></span></div>
-          <div class="ck ck-ts"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b class="ts-t">Proprietary Trailing Stop System</b></span></div>
-        </div>
-        <div class="w-foot"><span>Illustrative example, not a trade idea</span><b>Size so one loss can't hurt you</b></div>
+      </div>
+      <div class="hero-stats" aria-label="STU at a glance">
+        <div class="stat rv"><b data-count="40" data-suffix="K">0</b><span>Followers On X</span></div>
+        <div class="stat rv d1"><b data-count="100" data-suffix="+">0</b><span>Traders Worked With</span></div>
+        <div class="stat rv d2"><b data-count="3" data-suffix="+">0</b><span>Group Streams A Week</span></div>
+        <div class="stat rv d3"><b>1</b><span>Direct Partnership</span></div>
+        <div class="stat rv d4"><b>1:1</b><span>Relationship With Our Team</span></div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- STATS -->
+<!-- STATS / ACCOLADE -->
 <section class="stats">
-  <div class="wrap stats-row">
-    <div class="stat rv"><b data-count="40" data-suffix="K">0</b><span>Followers On X</span></div>
-    <div class="stat rv d1"><b data-count="100" data-suffix="+">0</b><span>Traders Worked With</span></div>
-    <div class="stat rv d2"><b data-count="3" data-suffix="+">0</b><span>Group Streams A Week</span></div>
-    <div class="stat rv d3"><b>1</b><span>Direct Partnership</span></div>
-    <div class="stat rv d4"><b>1:1</b><span>Relationship With Our Team</span></div>
-  </div>
   <p class="accolade rv d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>Consistently ranked among the top 100 trading voices by Kaiko</p>
 </section>
 
