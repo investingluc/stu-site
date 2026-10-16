@@ -301,7 +301,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .qa .ans p{padding:0 20px 20px;color:var(--g1);font-size:15.5px;line-height:1.65}
 
 /* cta */
-.cta{position:relative;border-radius:22px;padding:96px 32px;text-align:center;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,99,10,.42),rgba(69,25,0,.35) 45%,rgba(10,10,10,1) 80%);border:1px solid rgba(255,255,255,.09)}
+.cta{position:relative;border-radius:22px;padding:40px 28px;text-align:center;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,99,10,.42),rgba(69,25,0,.35) 45%,rgba(10,10,10,1) 80%);border:1px solid rgba(255,255,255,.09)}
 .cta:before{content:"";position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#ffb37a,#fff,#ffb37a,transparent);box-shadow:0 0 30px 6px rgba(255,99,10,.6)}
 .cta>*{position:relative;z-index:1}
 .cta h2{font-size:clamp(38px,5.2vw,64px);margin:22px 0 18px}
@@ -377,7 +377,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .fact span{font-size:12px}
   .plan,.incl{padding:26px}
   .price b{font-size:52px}
-  .cta{padding:72px 22px}
+  .cta{padding:28px 14px}
   .f-top{grid-template-columns:1fr 1fr}
   .f-top>div:first-child{grid-column:span 2}
   .brand span.full{display:none}
@@ -395,7 +395,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .rv{opacity:1;transform:none;filter:none}
 }
 
-.cal{position:relative;z-index:1;max-width:960px;margin:44px auto 0;text-align:left;border-radius:20px;background:linear-gradient(180deg,rgba(40,18,8,.55),rgba(12,12,12,.94));border:1px solid rgba(255,120,60,.2);box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,180,140,.1);display:grid;grid-template-columns:260px 1fr 220px;overflow:hidden}
+.cal{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:left;border-radius:20px;background:linear-gradient(180deg,rgba(40,18,8,.55),rgba(12,12,12,.94));border:1px solid rgba(255,120,60,.2);box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,180,140,.1);display:grid;grid-template-columns:260px 1fr 220px;overflow:hidden}
 .cal-info{padding:28px 24px;border-right:1px solid rgba(255,255,255,.07)}
 .cal-ic{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#FF8C45,#FF630A);box-shadow:0 10px 30px -8px rgba(255,99,10,.7)}
 .cal-ic svg{width:24px;height:24px}
@@ -432,7 +432,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
 .cta .cal .cal-lock{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:14px;font-size:12.5px;color:var(--g2)}
 .cal-lock svg{width:14px;height:14px;color:var(--o2);flex:none}
 @media (max-width:960px){.cal{grid-template-columns:1fr 1fr}.cal-info{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}.cal-info .cal-ic{grid-row:span 2}.cta .cal .cal-host{margin-top:0}.cal-meta,.cal-step{grid-column:1/-1}.cal-step{justify-self:start}.cal-meta{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
-@media (max-width:640px){.cal{grid-template-columns:1fr;margin-top:32px}.cal-times{border-left:0;border-top:1px solid rgba(255,255,255,.07)}.cal-meta{grid-template-columns:1fr;gap:10px}.cal-month{padding:22px 16px}.cal-slots{grid-template-columns:1fr 1fr;max-height:none}}
+@media (max-width:640px){.cal{grid-template-columns:1fr;margin-top:0}.cal-times{border-left:0;border-top:1px solid rgba(255,255,255,.07)}.cal-meta{grid-template-columns:1fr;gap:10px}.cal-month{padding:22px 16px}.cal-slots{grid-template-columns:1fr 1fr;max-height:none}}
 </style>
 </head>
 <body>
@@ -645,10 +645,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   <div class="wrap">
     <div class="cta rv">
       <div class="particles" id="particles" aria-hidden="true"></div>
-      <span class="pill">Your Next Chapter <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      <h2 class="grad">Stop Starting Over.</h2>
-      <p>You could miss the biggest trade of the year today and still make a fortune in the market tomorrow. There's always another opportunity. The goal is to still be here for it.</p>
-      <a class="btn btn-o" href="/apply/" target="_top">Apply to Join STU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
 
       <div class="cal" id="cal">
         <div class="cal-info">
