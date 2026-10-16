@@ -57,6 +57,7 @@ h1{font-size:clamp(40px,4.5vw,66px)}
 .hero-grid>:first-child{container-type:inline-size;min-width:0}
 .hero h1{font-size:clamp(46px,7.6vw,80px)}
 h1 .twl{display:block}
+h1 .tws{display:inline-block;white-space:nowrap;text-align:left;vertical-align:top}
 @media (max-width:720px){h1{line-height:1.1;letter-spacing:-.03em}.hero h1{font-size:clamp(42px,11vw,52px)}}
 h1 .caret{display:inline-block;width:.07em;height:.82em;margin-left:.06em;vertical-align:-.04em;background:var(--o);border-radius:2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
 h1 .hl{background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -471,7 +472,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   <div class="wrap hero-grid">
     <div>
       <span class="pill rv hero-pill"><span class="pl-full">Swing Trading University · Education, Not Alerts</span><span class="pl-short">Swing Trading University</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      <h1 class="grad rv d1"><span class="twl">Becoming <span id="art">a</span> <span class="hl"><span class="tw" id="tw">Profitable</span><span class="caret" aria-hidden="true"></span></span></span><span class="twl"><span class="hl">Swing Trader</span> <span class="ow">&amp; Active&nbsp;Investor.</span></span></h1>
+      <h1 class="grad rv d1"><span class="twl">Becoming <span id="art">a</span> <span class="tws" id="tws"><span class="hl"><span class="tw" id="tw">Profitable</span><span class="caret" aria-hidden="true"></span></span></span></span><span class="twl"><span class="hl">Swing Trader</span> <span class="ow">&amp; Active&nbsp;Investor.</span></span></h1>
       <p class="lead rv d2">The unique process built to find, size and hold swing trades, so you can <b>start aggressively compounding.</b></p>
       <div class="hero-cta rv d3">
         <a class="btn btn-w" href="/apply/" target="_top">Apply to Join STU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
@@ -918,6 +919,8 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
 </script>
 <script>
 (function(){var el=document.getElementById('tw');if(!el)return;var w=['Profitable','Compounding','Risk-Aware'],art=document.getElementById('art'),i=0,t=w[0],del=false;
+var slot=document.getElementById('tws');function fit(){if(!slot)return;var o=el.textContent,m=0;slot.style.minWidth='';w.forEach(function(x){el.textContent=x;m=Math.max(m,slot.getBoundingClientRect().width);});el.textContent=o;slot.style.minWidth=Math.ceil(m)+'px';}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
 var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 function tick(){if(rm){i=(i+1)%w.length;el.textContent=w[i];if(art)art.textContent=/^[AEIOU]/.test(w[i])?'an':'a';return setTimeout(tick,2600);}
  if(art)art.textContent=/^[AEIOU]/.test(w[i])?'an':'a';if(!del){if(t.length<w[i].length){t=w[i].slice(0,t.length+1);el.textContent=t;return setTimeout(tick,85);}del=true;return setTimeout(tick,2200);}
