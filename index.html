@@ -253,16 +253,6 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .chans div{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.35);border:1px solid var(--line);font-size:13.5px;color:#d6d6d6}
 .chans div i{font-style:normal;color:var(--o);font-weight:700}
 
-/* method */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
-.steps:before{content:"";position:absolute;top:47px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,99,10,.55),rgba(255,99,10,.55),transparent)}
-.step{padding:26px 22px 28px;background:linear-gradient(180deg,#151515,#0e0e0e)}
-.step .num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:600;font-size:16px;background:#0b0b0b;border:1px solid rgba(255,99,10,.5);color:var(--o2);box-shadow:0 0 24px -4px rgba(255,99,10,.55);margin-bottom:22px;position:relative}
-.step h3{font-size:20px}
-.step p{color:var(--g1);font-size:15px;margin-top:10px}
-.quote{margin:56px auto 0;text-align:center;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em;font-weight:500;max-width:760px}
-.quote .who{color:var(--g2);font-size:15px;display:block;margin-top:10px;font-weight:400;letter-spacing:0}
-
 /* for / not */
 .fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .fit .card{padding:32px}
@@ -393,8 +383,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .widget-col{max-width:520px}
   .bento{grid-template-columns:1fr 1fr}
   .b-a,.b-f,.b-g{grid-column:span 2}.b-b,.b-c,.b-d,.b-e{grid-column:span 1}
-  .steps{grid-template-columns:1fr 1fr}
-  .steps:before{display:none}
   .coach{grid-template-columns:1fr;gap:40px}
   .badge-card{max-width:440px;width:100%;margin:0 auto}
   .price-wrap{grid-template-columns:1fr;max-width:560px}
@@ -419,7 +407,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .row{grid-template-columns:36px 1fr;padding:32px 0;gap:8px 14px}
   .row>div:last-child{grid-column:2}
   .row .ic{margin:6px 0 14px}
-  .bento,.steps,.fit{grid-template-columns:1fr}
+  .bento,.fit{grid-template-columns:1fr}
   .b-a,.b-b,.b-c,.b-d,.b-e,.b-f,.b-g{grid-column:span 1}
   .mods{grid-template-columns:1fr}
   .bcard{padding:24px}
@@ -456,7 +444,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   <ul>
     <li><a href="#why">Why STU</a></li>
     <li><a href="#inside">What's Inside</a></li>
-    <li><a href="#method">Method</a></li>
     <li><a href="#pricing">How to Join</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -467,7 +454,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   </div>
 </nav>
 <div class="mnav" id="mnav">
-  <a href="#why">Why STU</a><a href="#inside">What's Inside</a><a href="#method">Method</a><a href="#pricing">How to Join</a><a href="#faq">FAQ</a><a class="m-login" href="https://member.swingtradinguniversity.com" target="_top">Member Login</a>
+  <a href="#why">Why STU</a><a href="#inside">What's Inside</a><a href="#pricing">How to Join</a><a href="#faq">FAQ</a><a class="m-login" href="https://member.swingtradinguniversity.com" target="_top">Member Login</a>
 </div>
 
 <!-- HERO -->
@@ -613,22 +600,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   </div>
 </section>
 
-<!-- METHOD -->
-<section class="sec" id="method">
-  <div class="wrap">
-    <div class="shead">
-      <div><span class="pill rv">The Method <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span><h2 class="grad rv d1">The Process<br>in Four Steps</h2></div>
-      <p class="rv d2">The same framework runs through every lesson, livestream and trade review.</p>
-    </div>
-    <div class="steps">
-      <div class="card step rv"><div class="num">01</div><h3>Environment First</h3><p>In or out, then long or short. If the market is going to chop you up, being bullish or bearish doesn't matter.</p></div>
-      <div class="card step rv d1"><div class="num">02</div><h3>Story → Chart → Catalyst</h3><p>Find strong stocks in leading themes with a clear catalyst ahead. A chart won't get off the couch without something to look forward to.</p></div>
-      <div class="card step rv d2"><div class="num">03</div><h3>Aggressive Defense</h3><p>Know your invalidation before you buy. Size so one bad trade can't hurt you. Your stop is just the entry fee.</p></div>
-      <div class="card step rv d3"><div class="num">04</div><h3>Lazy Offense</h3><p>Once it's green, let it work. Trail your stop and let the market decide when a winner is done. Green can always get greener.</p></div>
-    </div>
-    <p class="quote rv"><span class="gradx">Magnitude of correctness &gt; frequency of correctness.</span><span class="who">— Luc</span></p>
-  </div>
-</section>
 
 <!-- FIT -->
 <section class="sec" id="fit" style="padding-top:40px">
@@ -737,7 +708,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
         <a href="#top" class="brand"><span class="av" aria-hidden="true"></span>Swing Trading University</a>
         <p>Learn the process for finding, sizing and holding swing trades in common stock. Education, not alerts.</p>
       </div>
-      <div class="f-col"><h4>Explore</h4><a href="#why">Why STU</a><a href="#inside">What's Inside</a><a href="#method">Method</a><a href="#pricing">How to Join</a><a href="#faq">FAQ</a></div>
+      <div class="f-col"><h4>Explore</h4><a href="#why">Why STU</a><a href="#inside">What's Inside</a><a href="#pricing">How to Join</a><a href="#faq">FAQ</a></div>
       <div class="f-col"><h4>Connect</h4><a href="https://x.com/investingluc" target="_blank" rel="noopener">X (@investingluc)</a><a href="/apply/" target="_top">Apply to Join STU</a><a href="https://member.swingtradinguniversity.com" target="_top">Member Login</a></div>
     </div>
     <div class="disc"><b>Risk disclaimer:</b> Swing Trading University is for educational purposes only and is not financial, investment or trading advice. Trading involves substantial risk of loss and is not suitable for everyone. Past performance does not guarantee future results. Nothing shared here is a recommendation to buy or sell any security. Always do your own research and manage your own risk.</div>
