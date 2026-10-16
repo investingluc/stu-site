@@ -55,9 +55,9 @@ section{position:relative}
 h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.05}
 h1{font-size:clamp(40px,4.5vw,66px)}
 .hero-grid>:first-child{container-type:inline-size;min-width:0}
-.hero h1{font-size:min(8.1cqi,72px)}
-h1 .twl{display:block;white-space:nowrap}
-@media (max-width:720px){h1{line-height:1.1;letter-spacing:-.03em}.hero h1{font-size:7.4cqi}}
+.hero h1{font-size:clamp(46px,7.6vw,80px)}
+h1 .twl{display:block}
+@media (max-width:720px){h1{line-height:1.1;letter-spacing:-.03em}.hero h1{font-size:clamp(42px,11vw,52px)}}
 h1 .caret{display:inline-block;width:.07em;height:.82em;margin-left:.06em;vertical-align:-.04em;background:var(--o);border-radius:2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
 h1 .hl{background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 h1 .ow{background:#FAF7F2;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -111,7 +111,8 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .streak{position:absolute;left:-10%;top:58%;width:140%;height:2px;transform:rotate(-24deg);transform-origin:50% 50%;background:linear-gradient(90deg,transparent 0%,rgba(255,140,69,.0) 20%,#ffb37a 55%,#fff3e6 62%,rgba(255,99,10,.6) 72%,transparent 92%);box-shadow:0 0 18px 3px rgba(255,99,10,.55),0 0 80px 14px rgba(255,99,10,.25);opacity:.9}
 .streak.s2{top:12%;left:35%;width:90%;height:1px;opacity:.55}
 .glowblob{position:absolute;border-radius:50%;filter:blur(90px);background:radial-gradient(circle,rgba(255,99,10,.55),rgba(69,25,0,.0) 70%)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:48px;align-items:center}
+@media (min-width:1021px){.hero-grid>:last-child{font-size:.94em}}
 .hero h1{margin:22px 0 22px}
 .hero .lead{max-width:500px}
 .hero .lead b{color:#fff;font-weight:500}
@@ -154,7 +155,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .ck.on .bx{background:var(--green);border-color:var(--green);box-shadow:0 0 12px -2px rgba(61,220,132,.6)}
 .ck.on .bx svg{opacity:1;transform:none}
 .ck-ts{grid-column:1/-1;border-color:rgba(255,99,10,.22);background:linear-gradient(90deg,rgba(255,99,10,.07),rgba(255,255,255,.02))}
-.ck-ts span{flex:1}
+.ck-ts span{flex:1;min-width:0}.ck-ts .ts-t{white-space:nowrap;background:linear-gradient(90deg,#FAF7F2,#FFB27A);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ck-tag{flex:none;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FF8A3D;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,99,10,.35);background:rgba(255,99,10,.08)}
 .ck-ts.on{border-color:rgba(255,99,10,.45);background:linear-gradient(90deg,rgba(255,99,10,.12),rgba(61,220,132,.04))}
 .w-foot{display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--g3)}
@@ -492,7 +493,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
           <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Story</b><small>Leading theme</small></span></div>
           <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Chart</b><small>Relative strength</small></span></div>
           <div class="ck"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Catalyst</b><small>On deck</small></span></div>
-          <div class="ck ck-ts"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b>Trailing Stop</b><small>Adapts to the stock and the setup</small></span><em class="ck-tag">Proprietary</em></div>
+          <div class="ck ck-ts"><i class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i><span><b class="ts-t">Proprietary Trailing Stop System</b><small>Adapts to the stock and the setup</small></span></div>
         </div>
         <div class="w-foot"><span>Illustrative example, not a trade idea</span><b>Size so one loss can't hurt you</b></div>
       </div>
