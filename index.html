@@ -125,25 +125,6 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .hero-stats .stat:nth-child(1):before,.hero-stats .stat:nth-child(4):before{display:none}
 .hero-right{display:flex;flex-direction:column;gap:22px;align-self:start}
 .hero-right .accolade{margin:0 auto;padding:0 12px}
-.book-card{display:block;position:relative;max-width:440px;width:100%;margin:6px auto 0;border-radius:16px;padding:18px;background:linear-gradient(180deg,rgba(40,18,8,.62),rgba(14,14,14,.9));border:1px solid rgba(255,120,60,.2);box-shadow:0 24px 60px -24px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,180,140,.1);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .5s}
-.book-card:hover{transform:translateY(-3px);border-color:rgba(255,120,60,.45);box-shadow:0 30px 70px -24px rgba(255,99,10,.35)}
-.bc-top{display:flex;align-items:center;gap:12px}
-.bc-top .w-t{flex:1;min-width:0}
-.bc-top .w-t b{display:block;color:#fff;font-weight:500}
-.bc-top .w-t small{color:var(--g2);font-size:12.5px}
-.bc-step{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--o2);border:1px solid rgba(255,120,60,.35);border-radius:999px;padding:4px 9px;white-space:nowrap}
-.bc-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}
-.bc-days span{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);color:#ddd;font-size:15px;font-weight:500}
-.bc-days i{font-style:normal;font-size:11px;color:var(--g2);font-weight:400}
-.bc-days .on,.bc-slots .on{background:rgba(255,99,10,.14);border-color:rgba(255,99,10,.55);color:#fff}
-.bc-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
-.bc-slots span{text-align:center;padding:8px 0;border-radius:9px;font-size:12.5px;color:#cfcfcf;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);white-space:nowrap}
-.bc-cta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
-.bc-lock{display:inline-flex;align-items:center;gap:7px;color:var(--g2)}
-.bc-lock svg{width:14px;height:14px;color:var(--o2)}
-.bc-cta b{display:inline-flex;align-items:center;gap:6px;color:var(--o2);font-weight:500}
-.bc-cta b svg{width:14px;height:14px}
-@media (max-width:720px){.bc-slots{grid-template-columns:repeat(2,1fr)}.book-card{padding:16px}}
 .hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;font-size:14px;color:var(--g2)}
 .hero-note span{display:inline-flex;align-items:center;gap:7px}
 .hero-note svg{width:15px;height:15px;color:var(--o)}
@@ -413,6 +394,45 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none;filter:none}
 }
+
+.cal{position:relative;z-index:1;max-width:960px;margin:44px auto 0;text-align:left;border-radius:20px;background:linear-gradient(180deg,rgba(40,18,8,.55),rgba(12,12,12,.94));border:1px solid rgba(255,120,60,.2);box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,180,140,.1);display:grid;grid-template-columns:260px 1fr 220px;overflow:hidden}
+.cal-info{padding:28px 24px;border-right:1px solid rgba(255,255,255,.07)}
+.cal-ic{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#FF8C45,#FF630A);box-shadow:0 10px 30px -8px rgba(255,99,10,.7)}
+.cal-ic svg{width:24px;height:24px}
+.cta .cal .cal-host{margin-top:18px;font-size:13px;color:var(--g2)}
+.cal-info h3{margin-top:4px;font-size:22px;font-weight:600;letter-spacing:-.02em;color:#fff}
+.cal-meta{list-style:none;margin-top:18px;display:grid;gap:10px;font-size:14px;color:#cfcfcf}
+.cal-meta li{display:flex;align-items:center;gap:9px}
+.cal-meta svg{width:16px;height:16px;color:var(--o2);flex:none}
+.cal-step{display:inline-block;margin-top:22px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--o2);border:1px solid rgba(255,120,60,.35);border-radius:999px;padding:5px 10px}
+.cal-month{padding:26px 26px 22px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-head b{font-size:16px;font-weight:500;color:#fff}
+.cal-nav{display:flex;gap:6px}
+.cal-nav button{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:#ddd;cursor:pointer;font-size:15px;transition:background .3s,border-color .3s}
+.cal-nav button:hover:not(:disabled){border-color:rgba(255,120,60,.5);background:rgba(255,99,10,.12)}
+.cal-nav button:disabled{opacity:.3;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.cal-grid .dow{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);padding-bottom:6px}
+.cal-grid button{aspect-ratio:1;max-height:48px;border-radius:50%;border:1px solid transparent;background:none;color:#555;font:inherit;font-size:14.5px;cursor:default;transition:background .3s,border-color .3s,color .3s,transform .3s}
+.cal-grid button.av{color:#fff;background:rgba(255,99,10,.1);border-color:rgba(255,99,10,.22);cursor:pointer;font-weight:500}
+.cal-grid button.av:hover{border-color:rgba(255,120,60,.6);transform:scale(1.05)}
+.cal-grid button.sel{background:linear-gradient(180deg,#FF8C45,#FF630A);border-color:transparent;color:#fff;box-shadow:0 8px 24px -8px rgba(255,99,10,.8)}
+.cta .cal p{margin:0;max-width:none;line-height:1.45}
+.cta .cal .cal-tz{margin-top:16px;font-size:12.5px;color:var(--g2)}
+.cal-times{padding:26px 20px 22px;border-left:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column}
+.cal-times h4{font-size:14px;font-weight:500;color:#fff;margin-bottom:14px}
+.cal-slots{display:grid;gap:8px;max-height:330px;overflow:auto}
+.cal-slots button{height:44px;border-radius:10px;border:1px solid rgba(255,120,60,.35);background:rgba(255,255,255,.02);color:var(--o2);font:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
+.cal-slots button:hover{border-color:var(--o2);background:rgba(255,99,10,.1)}
+.cal-slots button.sel{background:rgba(255,99,10,.18);border-color:#FF630A;color:#fff}
+.cal-go{display:none;margin-top:14px;height:46px;border-radius:10px;align-items:center;justify-content:center;gap:6px;font-weight:600;font-size:14.5px;color:#fff;background:linear-gradient(180deg,#FF8C45,#FF630A);box-shadow:0 8px 30px -8px rgba(255,99,10,.7)}
+.cal-go.on{display:flex}
+.cal-go svg{width:14px;height:14px}
+.cta .cal .cal-lock{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:14px;font-size:12.5px;color:var(--g2)}
+.cal-lock svg{width:14px;height:14px;color:var(--o2);flex:none}
+@media (max-width:960px){.cal{grid-template-columns:1fr 1fr}.cal-info{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}.cal-info .cal-ic{grid-row:span 2}.cta .cal .cal-host{margin-top:0}.cal-meta,.cal-step{grid-column:1/-1}.cal-step{justify-self:start}.cal-meta{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
+@media (max-width:640px){.cal{grid-template-columns:1fr;margin-top:32px}.cal-times{border-left:0;border-top:1px solid rgba(255,255,255,.07)}.cal-meta{grid-template-columns:1fr;gap:10px}.cal-month{padding:22px 16px}.cal-slots{grid-template-columns:1fr 1fr;max-height:none}}
 </style>
 </head>
 <body>
@@ -485,16 +505,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
         <div class="stat rv d4"><b>1:1</b><span>Relationship With Our Team</span></div>
       </div>
       <p class="accolade rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>Consistently ranked among the top 100 trading voices by Kaiko</p>
-      <a class="book-card rv d3" href="/apply/" target="_top" aria-label="Apply to join STU, then book your call">
-        <div class="bc-top">
-          <div class="w-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
-          <div class="w-t"><b>Book Your Call</b><small>30 Min · Video Call With Our Team</small></div>
-          <span class="bc-step">Step 2</span>
-        </div>
-        <div class="bc-days" aria-hidden="true"><span><i>Mon</i>1</span><span class="on"><i>Tue</i>2</span><span><i>Wed</i>3</span><span><i>Thu</i>4</span><span><i>Fri</i>5</span></div>
-        <div class="bc-slots" aria-hidden="true"><span>9:30 AM</span><span class="on">11:00 AM</span><span>1:30 PM</span><span>4:15 PM</span></div>
-        <div class="bc-cta"><span class="bc-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Application Required First</span><b>Apply to Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></b></div>
-      </a>
       </div>
     </div>
   </div>
@@ -639,6 +649,31 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
       <h2 class="grad">Stop Starting Over.</h2>
       <p>You could miss the biggest trade of the year today and still make a fortune in the market tomorrow. There's always another opportunity. The goal is to still be here for it.</p>
       <a class="btn btn-o" href="/apply/" target="_top">Apply to Join STU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+
+      <div class="cal" id="cal">
+        <div class="cal-info">
+          <div class="cal-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
+          <p class="cal-host">Swing Trading University</p>
+          <h3>Book Your Call</h3>
+          <ul class="cal-meta">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 Min</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Video Call With Our Team</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Application Required First</li>
+          </ul>
+          <span class="cal-step">Step 2 · After You Apply</span>
+        </div>
+        <div class="cal-month">
+          <div class="cal-head"><b id="calTitle"></b><div class="cal-nav"><button type="button" id="calPrev" aria-label="Previous month">&#8249;</button><button type="button" id="calNext" aria-label="Next month">&#8250;</button></div></div>
+          <div class="cal-grid" id="calGrid"></div>
+          <p class="cal-tz">Times shown in Central Time (CT)</p>
+        </div>
+        <div class="cal-times">
+          <h4 id="calDay">Select a Day</h4>
+          <div class="cal-slots" id="calSlots"></div>
+          <a class="cal-go" id="calGo" href="/apply/" target="_top">Apply to Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <p class="cal-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Your application comes first. Then you'll confirm your time.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -841,6 +876,38 @@ function tick(){var c=document.querySelector('h1 .caret');if(c){c.classList.togg
  if(art)art.textContent=/^[AEIOU]/.test(w[i])?'an':'a';if(!del){if(t.length<w[i].length){t=w[i].slice(0,t.length+1);el.textContent=t;return setTimeout(tick,85);}del=true;return setTimeout(tick,2200);}
  if(t.length>0){t=t.slice(0,-1);el.textContent=t;return setTimeout(tick,45);}del=false;i=(i+1)%w.length;setTimeout(tick,250);}
 setTimeout(function(){del=true;tick();},2600);})();
+</script>
+<script>
+(function(){
+  var g=document.getElementById('calGrid');if(!g)return;
+  var M=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var D=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var T=['9:30 AM','10:30 AM','11:00 AM','1:00 PM','1:30 PM','3:00 PM','4:15 PM'];
+  var now=new Date();now.setHours(0,0,0,0);
+  var base=new Date(now.getFullYear(),now.getMonth(),1),off=0,sel=null;
+  var title=document.getElementById('calTitle'),slots=document.getElementById('calSlots'),day=document.getElementById('calDay'),go=document.getElementById('calGo'),pv=document.getElementById('calPrev'),nx=document.getElementById('calNext');
+  function avail(d){var w=d.getDay();return d>now&&w>0&&w<6&&(d.getDate()*7)%5!==0;}
+  function times(d){return T.filter(function(_,i){return (d.getDate()+i)%3!==0;});}
+  function render(){
+    var m=new Date(base.getFullYear(),base.getMonth()+off,1);
+    title.textContent=M[m.getMonth()]+' '+m.getFullYear();pv.disabled=off<=0;nx.disabled=off>=2;
+    var h='';D.forEach(function(x){h+='<span class="dow">'+x+'</span>';});
+    for(var i=0;i<m.getDay();i++)h+='<span></span>';
+    var n=new Date(m.getFullYear(),m.getMonth()+1,0).getDate();
+    for(var dd=1;dd<=n;dd++){var d=new Date(m.getFullYear(),m.getMonth(),dd),a=avail(d),s=sel&&+sel===+d;
+      h+='<button type="button" data-t="'+(+d)+'" class="'+(a?'av':'')+(s?' sel':'')+'"'+(a?'':' disabled')+'>'+dd+'</button>';}
+    g.innerHTML=h;
+  }
+  function pick(d){sel=d;go.classList.remove('on');render();
+    day.textContent=D[d.getDay()]+', '+M[d.getMonth()].slice(0,3)+' '+d.getDate();
+    slots.innerHTML=times(d).map(function(x){return '<button type="button">'+x+'</button>';}).join('');}
+  g.addEventListener('click',function(e){var b=e.target.closest('button.av');if(b)pick(new Date(+b.dataset.t));});
+  slots.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+    [].forEach.call(slots.children,function(c){c.classList.toggle('sel',c===b);});
+    go.href='/apply/?slot='+encodeURIComponent(day.textContent+' '+b.textContent+' CT');go.classList.add('on');});
+  pv.onclick=function(){if(off>0){off--;render();}};nx.onclick=function(){if(off<2){off++;render();}};
+  render();var f=new Date(now);do{f.setDate(f.getDate()+1);}while(!avail(f));if(f.getMonth()===now.getMonth())pick(f);
+})();
 </script>
 </body>
 </html>
