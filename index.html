@@ -432,6 +432,16 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
 .cal-lock svg{width:14px;height:14px;color:var(--o2);flex:none}
 @media (max-width:960px){.cal{grid-template-columns:1fr 1fr}.cal-info{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}.cal-info .cal-ic{grid-row:span 2}.cta .cal .cal-host{margin-top:0}.cal-meta,.cal-step{grid-column:1/-1}.cal-step{justify-self:start}.cal-meta{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
 @media (max-width:640px){.cal{grid-template-columns:1fr;margin-top:0}.cal-times{border-left:0;border-top:1px solid rgba(255,255,255,.07)}.cal-meta{grid-template-columns:1fr;gap:10px}.cal-month{padding:22px 16px}.cal-slots{grid-template-columns:1fr 1fr;max-height:none}}
+.ins-grid{list-style:none;margin:40px auto 0;padding:0;max-width:1080px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ins-item{display:flex;align-items:center;gap:16px;padding:22px 22px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);transition:border-color .4s ease,transform .4s ease,background .4s ease}
+.ins-item:hover{border-color:rgba(255,140,69,.45);transform:translateY(-2px)}
+.ins-item em,.ins-roi em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.08em;color:#FF8C45;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,140,69,.1);border:1px solid rgba(255,140,69,.3)}
+.ins-item span{font-size:16.5px;font-weight:600;line-height:1.35;color:#FAF7F2}
+.ins-roi{max-width:1080px;margin:14px auto 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 18px;padding:30px 24px;border-radius:20px;text-align:center;background:radial-gradient(120% 160% at 50% 0%,rgba(255,140,69,.18),rgba(255,140,69,.03) 60%);border:1px solid rgba(255,140,69,.4)}
+.ins-roi span{font-size:clamp(24px,3.2vw,34px);font-weight:700;letter-spacing:-.01em;color:#FAF7F2}
+.ins-roi small{flex-basis:100%;font-size:15px;color:rgba(250,247,242,.6)}
+@media(max-width:960px){.ins-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ins-grid{grid-template-columns:1fr;gap:10px;margin-top:28px}.ins-item{padding:16px 18px}.ins-item span{font-size:15.5px}.ins-roi{padding:24px 18px}}
 </style>
 </head>
 <body>
@@ -519,70 +529,13 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   <div class="wrap">
     <div class="shead center">
       <span class="pill rv">What's Inside <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      <h2 class="grad rv d1" style="margin-top:20px">Everything I Wish I Had<br>When I Started Trading</h2>
-      <p class="rv d2">One program, one community and the tools I actually use, all in one place.</p>
+      <h2 class="grad rv d1" style="margin-top:20px">What You Get<br>Working With Me</h2>
+      <p class="rv d2">A real relationship with me and the STU team, built around you and how you trade.</p>
     </div>
-    <div class="bento">
-      <div class="card bcard b-a rv">
-        <h3>The "How To Swing Trade" Program</h3>
-        <p>12 modules and 50+ lessons that take you from foundations to holding winners. My whole playbook, in order.</p>
-        <div class="vis"><div class="mods">
-          <div class="mod"><em>01</em>Foundations: Easy Mode &amp; Survival</div>
-          <div class="mod"><em>02</em>Market Environment</div>
-          <div class="mod"><em>03</em>Story → Chart → Catalyst</div>
-          <div class="mod"><em>04</em>Themes, Rotation &amp; Policy</div>
-          <div class="mod"><em>06</em>Entries, Sizing &amp; Building Positions</div>
-          <div class="mod"><em>07</em>Stops, Exits &amp; Holding Winners</div>
-        </div></div>
-      </div>
-      <div class="card bcard b-b rv d1">
-        <h3>Livestreams</h3>
-        <p>Multiple times a week. Watch how I think through the market in real time, and ask questions live.</p>
-        <div class="vis"><div class="live-screen"><span class="live-badge"><i></i>LIVE</span><svg id="livesvg" viewBox="0 0 300 130" preserveAspectRatio="none"></svg></div></div>
-      </div>
-      <div class="card bcard b-c rv">
-        <h3>Weekly Outlook &amp; Watchlist</h3>
-        <p>Where I think the market's headed, the themes I'm watching and the names on my radar. Context, not calls.</p>
-        <div class="vis"><div class="wl">
-          <div><b>Market Environment</b><span class="on">Weekly</span></div>
-          <div><b>Leading Themes</b><span>Rotation</span></div>
-          <div><b>Names On Radar</b><span>Watchlist</span></div>
-        </div></div>
-      </div>
-      <div class="card bcard b-d rv d1">
-        <h3>Screeners &amp; AI Prompts</h3>
-        <p>The scans and research prompts I use to find strong stocks early.</p>
-        <div class="vis"><div class="prompt"><small>Research prompt</small>Summarize the catalysts coming up for this stock and the theme it belongs to<span class="caret"></span></div>
-        <div class="scr"><span>Relative strength</span><span>Near highs</span><span>Earnings ahead</span></div></div>
-      </div>
-      <div class="card bcard b-e rv d2">
-        <h3>Trade Reviews</h3>
-        <p>Post your trades and get real feedback on your entry, size, stop and thesis.</p>
-        <div class="vis"><div class="review">
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC84" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Thesis &amp; catalyst</div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="#3DDC84" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Position size</div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="#FF8C45" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v5"/></svg>Stop placement</div>
-        </div></div>
-      </div>
-      <div class="card bcard b-f rv">
-        <h3>Group Chat &amp; Questions</h3>
-        <p>A room full of traders who take this seriously. Ask anything. Iron sharpens iron.</p>
-        <div class="vis"><div class="chans">
-          <div><i>#</i>Group Chat</div><div><i>#</i>Questions</div><div><i>#</i>Wins &amp; Lessons</div><div><i>#</i>Livestreams</div>
-        </div></div>
-      </div>
-      <div class="card bcard b-g rv d1">
-        <h3>My Portfolio &amp; Trade Ideas</h3>
-        <p>See what I'm holding, how I'm allocated and the reasoning behind every buy and sell. Ideas to learn from, not alerts to copy.</p>
-        <div class="vis"><div class="chans">
-          <div><i>#</i>Portfolio</div><div><i>#</i>Allocation</div><div><i>#</i>Buys &amp; Sells</div><div><i>#</i>Trade Ideas</div><div><i>#</i>Position Sizing</div><div><i>#</i>Thesis Updates</div>
-        </div></div>
-      </div>
-    </div>
+    <ul class="ins-grid"><li class="ins-item rv d0"><em>01</em><span>1:1 Relationship With Luc &amp; The STU Team</span></li><li class="ins-item rv d1"><em>02</em><span>Personal Strategy &amp; Accountability Partnership</span></li><li class="ins-item rv d2"><em>03</em><span>Coaching, Mentorship &amp; Support</span></li><li class="ins-item rv d0"><em>04</em><span>Performance Reviews &amp; Trade Recaps</span></li><li class="ins-item rv d1"><em>05</em><span>Commentary, Idea Jams &amp; Offsites</span></li><li class="ins-item rv d2"><em>06</em><span>Rulebook, Weekly Plans &amp; Education</span></li><li class="ins-item rv d0"><em>07</em><span>Access to Other Top Traders &amp; Peer Groups</span></li><li class="ins-item rv d1"><em>08</em><span>Full Resource Repository</span></li><li class="ins-item rv d2"><em>09</em><span>Playbook</span></li></ul>
+    <div class="ins-roi rv"><em>10</em><span>Return on Investment</span><small>Measured in skill, process and confidence that compounds.</small></div>
   </div>
 </section>
-
-
 
 <!-- CTA -->
 <section class="sec" style="padding-top:40px;padding-bottom:16px">
