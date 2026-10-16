@@ -53,9 +53,11 @@ section{position:relative}
 .grad{background:linear-gradient(180deg,#fff 0%,#fff 35%,#9a9a9a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .gradx{background:linear-gradient(90deg,#fff 0%,#fff 45%,#8d8d8d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.05}
-h1{font-size:clamp(44px,6.2vw,76px)}
+h1{font-size:clamp(40px,4.5vw,66px)}
+.hero-grid>:first-child{container-type:inline-size;min-width:0}
+.hero h1{font-size:min(8.1cqi,72px)}
 h1 .twl{display:block;white-space:nowrap}
-@media (max-width:720px){h1{font-size:clamp(34px,10.4vw,46px);line-height:1.08;letter-spacing:-.03em}h1 .twl{white-space:normal}h1 .twl:last-child .ow{display:block}}
+@media (max-width:720px){h1{line-height:1.1;letter-spacing:-.03em}.hero h1{font-size:7.4cqi}}
 h1 .caret{display:inline-block;width:.07em;height:.82em;margin-left:.06em;vertical-align:-.04em;background:var(--o);border-radius:2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
 h1 .hl{background:linear-gradient(180deg,var(--o2),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 h1 .ow{background:#FAF7F2;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -109,7 +111,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .streak{position:absolute;left:-10%;top:58%;width:140%;height:2px;transform:rotate(-24deg);transform-origin:50% 50%;background:linear-gradient(90deg,transparent 0%,rgba(255,140,69,.0) 20%,#ffb37a 55%,#fff3e6 62%,rgba(255,99,10,.6) 72%,transparent 92%);box-shadow:0 0 18px 3px rgba(255,99,10,.55),0 0 80px 14px rgba(255,99,10,.25);opacity:.9}
 .streak.s2{top:12%;left:35%;width:90%;height:1px;opacity:.55}
 .glowblob{position:absolute;border-radius:50%;filter:blur(90px);background:radial-gradient(circle,rgba(255,99,10,.55),rgba(69,25,0,.0) 70%)}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center}
 .hero h1{margin:22px 0 22px}
 .hero .lead{max-width:500px}
 .hero .lead b{color:#fff;font-weight:500}
