@@ -262,20 +262,6 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .chans div{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.35);border:1px solid var(--line);font-size:13.5px;color:#d6d6d6}
 .chans div i{font-style:normal;color:var(--o);font-weight:700}
 
-/* for / not */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fit .card{padding:32px}
-.fit h3{display:flex;align-items:center;gap:12px;font-size:22px;margin-bottom:22px}
-.fit h3 i{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex:none}
-.fit ul{list-style:none;display:flex;flex-direction:column;gap:14px}
-.fit li{display:flex;gap:12px;color:var(--g1);font-size:16px;line-height:1.5}
-.fit li svg{width:18px;height:18px;flex:none;margin-top:3px}
-.yes h3 i{background:rgba(61,220,132,.12);color:var(--green)}
-.yes li svg{color:var(--green)}
-.no h3 i{background:rgba(255,90,90,.1);color:var(--red)}
-.no li svg{color:var(--red)}
-.yes{background:linear-gradient(180deg,rgba(255,99,10,.10),#101010 55%)!important}
-
 /* coach */
 .coach{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
 .badge-card{padding:44px 32px 30px;border-radius:24px;text-align:center;background:radial-gradient(ellipse at 50% 30%,rgba(255,99,10,.22),rgba(69,25,0,.10) 45%,transparent 72%),linear-gradient(180deg,#161210,#0d0d0d)}
@@ -400,7 +386,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .row{grid-template-columns:36px 1fr;padding:32px 0;gap:8px 14px}
   .row>div:last-child{grid-column:2}
   .row .ic{margin:6px 0 14px}
-  .bento,.fit{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
   .b-a,.b-b,.b-c,.b-d,.b-e,.b-f,.b-g{grid-column:span 1}
   .mods{grid-template-columns:1fr}
   .bcard{padding:24px}
@@ -408,7 +394,7 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .fact{padding:12px}
   .fact b{font-size:19px}
   .fact span{font-size:12px}
-  .plan,.incl,.fit .card{padding:26px}
+  .plan,.incl{padding:26px}
   .price b{font-size:52px}
   .cta{padding:72px 22px}
   .f-top{grid-template-columns:1fr 1fr}
@@ -588,37 +574,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   </div>
 </section>
 
-
-<!-- FIT -->
-<section class="sec" id="fit" style="padding-top:40px">
-  <div class="wrap">
-    <div class="shead center">
-      <span class="pill rv">Is This For You? <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      <h2 class="grad rv d1" style="margin-top:20px">Honest About Who<br>This Is For</h2>
-    </div>
-    <div class="fit">
-      <div class="card yes rv">
-        <h3><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg></i>This Is for You If…</h3>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>You're newer and want to learn it the right way the first time.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>You've blown up an account (or come close) and want to stop starting over.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>You have a 9-to-5 and want a style that doesn't keep you glued to the screen.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>You want to think for yourself, not copy someone else's trades.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>You're in this for years, not weeks.</li>
-        </ul>
-      </div>
-      <div class="card no rv d1">
-        <h3><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>This Is Not for You If…</h3>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>You want alerts to copy blindly.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>You want to turn $500 into $50K by next month.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>You're here to gamble on 0DTE options.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>You're not willing to put in the reps.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PRICING -->
 <section class="sec" id="pricing">
