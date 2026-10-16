@@ -283,22 +283,22 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
 .incl li svg{width:19px;height:19px;color:var(--o);flex:none;margin-top:2px}
 .incl li small{display:block;color:var(--g2);font-size:13.5px}
 
-/* faq */
-.faq{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
-.faq-l p{color:var(--g1);margin-top:22px;font-size:16px;max-width:360px}
-.faq-l .btn{margin-top:28px}
-.acc{display:flex;flex-direction:column;gap:12px}
-.qa{border-radius:12px;background:#151515;border:1px solid var(--line);transition:border-color .3s,background .3s}
-.qa.open{border-color:rgba(255,99,10,.35);background:linear-gradient(180deg,rgba(255,99,10,.07),#141414)}
-.qa button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 20px;cursor:pointer;font-size:17px;font-weight:500;color:#e9e9e9;letter-spacing:-.01em}
-.qa button:focus-visible{outline:2px solid var(--o);outline-offset:2px;border-radius:12px}
-.qa .tg{width:26px;height:26px;border-radius:7px;border:1px solid var(--line2);display:grid;place-items:center;flex:none;transition:transform .35s ease,background .3s,border-color .3s}
-.qa .tg svg{width:14px;height:14px}
+/* faq (compact, in footer) */
+.f-faq{position:relative;margin-top:48px}
+.f-faq>h4{font-weight:500;font-size:17px;margin-bottom:14px;letter-spacing:-.01em}
+.acc{display:flex;flex-direction:column;gap:8px}
+.qa{border-radius:10px;background:rgba(255,255,255,.02);border:1px solid var(--line);transition:border-color .3s,background .3s}
+.qa.open{border-color:rgba(255,99,10,.35);background:linear-gradient(180deg,rgba(255,99,10,.07),rgba(20,20,20,.9))}
+.qa button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 16px;cursor:pointer;font-size:15px;font-weight:500;color:#e9e9e9;letter-spacing:-.01em}
+.qa button:focus-visible{outline:2px solid var(--o);outline-offset:2px;border-radius:10px}
+.qa .tg{width:22px;height:22px;border-radius:6px;border:1px solid var(--line2);display:grid;place-items:center;flex:none;transition:transform .35s ease,background .3s,border-color .3s}
+.qa .tg svg{width:12px;height:12px}
 .qa.open .tg{transform:rotate(180deg);background:var(--o);border-color:var(--o)}
-.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .qa.open .ans{grid-template-rows:1fr}
 .qa .ans>div{overflow:hidden}
-.qa .ans p{padding:0 20px 20px;color:var(--g1);font-size:15.5px;line-height:1.65}
+.qa .ans p{padding:0 16px 14px;color:var(--g2);font-size:14.5px;line-height:1.6}
+.f-faq .acc{max-width:920px}
 
 /* cta */
 .cta{position:relative;border-radius:22px;padding:40px 28px;text-align:center;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,99,10,.42),rgba(69,25,0,.35) 45%,rgba(10,10,10,1) 80%);border:1px solid rgba(255,255,255,.09)}
@@ -346,7 +346,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
   .coach{grid-template-columns:1fr;gap:40px}
   .badge-card{max-width:440px;width:100%;margin:0 auto}
   .price-wrap{grid-template-columns:1fr;max-width:560px}
-  .faq{grid-template-columns:1fr;gap:36px}
 }
 @media (max-width:720px){
   .sec{padding:88px 0}
@@ -584,28 +583,6 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
 </section>
 
 
-<!-- FAQ -->
-<section class="sec" id="faq" style="padding-top:40px">
-  <div class="wrap faq">
-    <div class="faq-l">
-      <span class="pill rv">FAQ <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      <h2 class="grad rv d1" style="margin-top:20px">Frequently<br>Asked Questions</h2>
-      <p class="rv d2">Straight answers. If something isn't covered here, ask in the community once you're inside.</p>
-      <a class="btn btn-g rv d3" href="/apply/" target="_top">Apply to Join STU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-    </div>
-    <div class="acc" id="acc">
-      <div class="qa open rv"><button aria-expanded="true">Is this an alerts or picks group?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>No. I'll share what I'm watching and how I'm thinking, but the whole point is teaching you to find and manage your own trades. Picks make you dependent. A process makes you dangerous.</p></div></div></div>
-      <div class="qa rv d1"><button aria-expanded="false">I'm brand new. Is this too advanced?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Not at all. Module 1 starts with the foundations: shares, not options, and survival first. If you're new, you're actually in the best spot, because you have no bad habits to unlearn.</p></div></div></div>
-      <div class="qa rv d2"><button aria-expanded="false">Do you teach options?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>STU is built around swing trading common stock. It's easy mode, and it's how I trade. Learn the market first and add variables later, if ever.</p></div></div></div>
-      <div class="qa rv d3"><button aria-expanded="false">How much time do I need?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Swing trading fits around a job. Most of the work is prep and research, and you can do it on nights and weekends. The hard part is doing less, not more.</p></div></div></div>
-      <div class="qa rv d3"><button aria-expanded="false">How often are the livestreams?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Multiple times a week. I break down the market in real time and answer questions live. Everything else, including the program, the weekly outlook and the community, is there whenever you need it.</p></div></div></div>
-      <div class="qa rv d3"><button aria-expanded="false">How do I pause or end my membership?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Membership details, including how to pause or end it, are covered on your call.</p></div></div></div>
-      <div class="qa rv d3"><button aria-expanded="false">How much does it cost?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Pricing is shared after your application and call. That way we can get to know each other before we talk numbers.</p></div></div></div>
-      <div class="qa rv d4"><button aria-expanded="false">Will I make money?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>I can't promise that, and anyone who does is lying to you. Trading is hard. It took me six years. What I can do is give you the process, the tools and the people, so you're not doing it alone and you're not getting wrecked while you learn.</p></div></div></div>
-      <div class="qa rv d5"><button aria-expanded="false">Is this financial advice?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>No. Everything here is education. You make your own decisions with your own money.</p></div></div></div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="sec" style="padding-top:40px;padding-bottom:40px">
@@ -651,6 +628,20 @@ footer:before{content:"";position:absolute;left:50%;bottom:-260px;transform:tran
       </div>
       <div class="f-col"><h4>Explore</h4><a href="#inside">What's Inside</a><a href="#faq">FAQ</a></div>
       <div class="f-col"><h4>Connect</h4><a href="https://x.com/investingluc" target="_blank" rel="noopener">X (@investingluc)</a><a href="/apply/" target="_top">Apply to Join STU</a><a href="https://member.swingtradinguniversity.com" target="_top">Member Login</a></div>
+    </div>
+    <div class="f-faq" id="faq">
+      <h4>FAQ</h4>
+      <div class="acc" id="acc">
+        <div class="qa"><button aria-expanded="false">Is this an alerts or picks group?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>No. I'll share what I'm watching and how I'm thinking, but the whole point is teaching you to find and manage your own trades. Picks make you dependent. A process makes you dangerous.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">I'm brand new. Is this too advanced?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Not at all. Module 1 starts with the foundations: shares, not options, and survival first. If you're new, you're actually in the best spot, because you have no bad habits to unlearn.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Do you teach options?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>STU is built around swing trading common stock. It's easy mode, and it's how I trade. Learn the market first and add variables later, if ever.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How much time do I need?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Swing trading fits around a job. Most of the work is prep and research, and you can do it on nights and weekends. The hard part is doing less, not more.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How often are the livestreams?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Multiple times a week. I break down the market in real time and answer questions live. Everything else, including the program, the weekly outlook and the community, is there whenever you need it.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How do I pause or end my membership?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Membership details, including how to pause or end it, are covered on your call.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How much does it cost?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>Pricing is shared after your application and call. That way we can get to know each other before we talk numbers.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Will I make money?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>I can't promise that, and anyone who does is lying to you. Trading is hard. It took me six years. What I can do is give you the process, the tools and the people, so you're not doing it alone and you're not getting wrecked while you learn.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Is this financial advice?<span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="ans"><div><p>No. Everything here is education. You make your own decisions with your own money.</p></div></div></div>
+      </div>
     </div>
     <div class="disc"><b>Risk disclaimer:</b> Swing Trading University is for educational purposes only and is not financial, investment or trading advice. Trading involves substantial risk of loss and is not suitable for everyone. Past performance does not guarantee future results. Nothing shared here is a recommendation to buy or sell any security. Always do your own research and manage your own risk.</div>
     <div class="f-bot"><span>© 2026 Swing Trading University. All rights reserved.</span><span>Not financial advice.</span></div>
